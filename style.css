@@ -1,0 +1,54 @@
+body
+{
+    background: black;
+    color:whitesmoke;
+}
+input
+{
+    color: cornsilk;
+    background: blue;
+    width: 32px;
+    height: 32px;
+}
+.player
+{
+    background: chocolate;
+}
+.playerShip
+{
+    background: darkgoldenrod;
+}
+.computer
+{
+    background: darkblue;
+}
+.computerShip
+{
+    background: darkblue;
+}
+.button
+{
+    width: 128px;
+}
+.destroyedPlayerShip
+{
+    background: whitesmoke;
+}
+.destroyedComputerShip
+{
+    background: whitesmoke;
+}
+#menu
+{
+    width:128px;
+    border-color: black;
+    background: black;
+    color: whitesmoke;
+    border:none ;
+}
+#gameZone
+{
+    position:sticky;
+    width: 600px;
+    height: 600px;
+}
