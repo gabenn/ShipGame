@@ -60,8 +60,11 @@ function game(number) {
         while (document.getElementById("p" + (computerMove + 1)).className == "playerShip") {
             document.getElementById("p" + (computerMove + 1)).className = "destroyedPlayerShip";
             computerMove = Math.floor(Math.random() * positionP.length);
-            console.log(document.getElementById("p" + (computerMove + 1)))
+            while (computerShoot.includes("p" + (computerMove + 1))) {
+                computerMove = Math.floor(Math.random() * positionP.length); //second shoot if already shot
+            }
             computerShoot[cShootNumber] = "p" + (computerMove + 1);
+            console.log(document.getElementById("p" + (computerMove + 1)))
             cShootNumber += 1;
             computerPoints += 1;
         }
