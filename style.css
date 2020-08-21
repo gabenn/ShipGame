@@ -1,54 +1,56 @@
-body
-{
+body {
     background: black;
-    color:whitesmoke;
+    color: white;
 }
-input
-{
+
+input {
     color: cornsilk;
-    background: blue;
+    background: red;
     width: 32px;
     height: 32px;
 }
-.player
-{
-    background: chocolate;
+
+#gameZone {
+    display: flex;
+    flex-grow: wrap;
+    flex-direction: row;
+    margin: 25px;
+    justify-content: center;
+    text-align: center;
 }
-.playerShip
-{
-    background: darkgoldenrod;
+
+#playerZone {
+    margin-right: 25px;
 }
-.computer
-{
-    background: darkblue;
+
+.player {
+    background: green;
 }
-.computerShip
-{
-    background: darkblue;
+
+.playerShip {
+    background: lightgreen;
 }
-.button
-{
+
+.computer {
+    background: red;
+}
+
+.computerShip {
+    background: red;
+}
+
+.button {
     width: 128px;
 }
-.destroyedPlayerShip
-{
-    background: whitesmoke;
-}
-.destroyedComputerShip
-{
-    background: whitesmoke;
-}
-#menu
-{
-    width:128px;
-    border-color: black;
+
+.destroyedPlayerShip {
     background: black;
-    color: whitesmoke;
-    border:none ;
 }
-#gameZone
-{
-    position:sticky;
-    width: 600px;
-    height: 600px;
+
+.destroyedComputerShip {
+    background: black;
+}
+
+#destroyedField {
+    background: cyan;
 }
