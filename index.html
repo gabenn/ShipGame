@@ -18,21 +18,28 @@
 <script src="randomThings.js">
     //script js computer Ships
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">// jquery</script>
+
 <script>
-    //script jquery playerShips
-    //Rewrite it into js
-    let i = 0;
-    $(document).ready(function () {
-        $(".player").click(function () {
-            if (i < (positionP.length / 4)) {
-                $(this).attr("class", "playerShip");
-                i++;
+    //script playerShips
+    let counter = 0;
+    let playerFields = document.querySelectorAll(".player");
+    playerFields = [...playerFields];
+
+    for (let i = 0; i < positionP.length; i++) {
+        playerFields[i].addEventListener("click", function () {
+
+            if (counter < (positionP.length / 4)) {
+                if (playerFields[i].className != "playerShip") {
+                    counter++;
+                }
+                playerFields[i].className = "playerShip";
+                console.log(counter);
+
             } else {
-                console.log("juz stworzyłeś wszystkie statki")
+                console.log("juz stworzyłeś wszystkie statki");
             }
         });
-    });
+    }
 </script>
 
 </html>
