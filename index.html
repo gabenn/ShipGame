@@ -15,31 +15,11 @@
     </div>
 </body>
 <script src="creatingElements.js"></script>
+
+
+<script>
+</script>
 <script src="randomThings.js">
     //script js computer Ships
 </script>
-
-<script>
-    //script playerShips
-    let counter = 0;
-    let playerFields = document.querySelectorAll(".player");
-    playerFields = [...playerFields];
-
-    for (let i = 0; i < positionP.length; i++) {
-        playerFields[i].addEventListener("click", function () {
-
-            if (counter < (positionP.length / 4)) {
-                if (playerFields[i].className != "playerShip") {
-                    counter++;
-                }
-                playerFields[i].className = "playerShip";
-                console.log(counter);
-
-            } else {
-                console.log("juz stworzyłeś wszystkie statki");
-            }
-        });
-    }
-</script>
-
 </html>

@@ -7,6 +7,7 @@ let computerPoints = 0;
 let computerShoot = [];
 let cShootNumber = 0;
 let computerMove = 0;
+// 
 if (sizeChoose == 1) {
     for (let i = 0; i < 16; i++) {
         previousPositionC[i] = i + 1;
@@ -22,6 +23,27 @@ if (sizeChoose == 1) {
         previousPositionC[i] = i + 1;
         positionP[i] = i + 1;
     }
+}
+
+// playerShips
+let counter = 0;
+let playerFields = document.querySelectorAll(".player");
+playerFields = [...playerFields];
+
+for (let i = 0; i < positionP.length; i++) {
+    playerFields[i].addEventListener("click", function () {
+
+        if (counter < (positionP.length / 4)) {
+            if (playerFields[i].className != "playerShip") {
+                counter++;
+            }
+            playerFields[i].className = "playerShip";
+            console.log(counter);
+
+        } else {
+            alert("Już stworzyłeś wszystkie statki.\nYou made all the ships.");
+        }
+    });
 }
 
 function randomC() { //creating computer Ships
@@ -40,6 +62,10 @@ function randomC() { //creating computer Ships
 }
 
 function game(number) {
+    if (counter < (positionP.length/4)) {
+        alert("Nie stworzyłeś jeszcze wszystkich statków.\nYou haven't made all the ships.")
+        return;
+    }
     active = document.getElementById("c" + number);
     active.setAttribute('onclick', 'console.log("already shot")');
     active.style.background = "cyan";
@@ -71,11 +97,11 @@ function game(number) {
         document.getElementById("p" + (computerMove + 1)).style.background = "cyan";
     }
     if (playerPoints == (positionP.length / 4)) {
-        alert("gracz wygrał")
+        alert("Wygrałeś!\nYou won!")
         location.reload();
     }
     if (computerPoints == (positionP.length / 4)) {
-        alert("komputer wygrał")
+        alert("Przegrałeś!\nYou lost!")
         location.reload();
     }
 }
